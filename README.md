@@ -1,5 +1,9 @@
 # Vault KV Migrate Role
 
+[![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Ansible Role](https://img.shields.io/badge/ansible%20role-alalkamys.vault_kv_migrate-blue.svg)](https://galaxy.ansible.com/alalkamys/vault_kv_migrate/)
+[![GitHub tag](https://img.shields.io/github/tag/alakamys/ansible-role-vault-kv-migrate.svg)](https://github.com/alalkamys/ansible-role-vault-kv-migrate/tags)
+
 ## Overview
 
 The `vault_kv_migrate` role automates the migration of secrets from one HashiCorp Vault Key-Value (KV) engine to multiple engines. It can also export HashiCorp KV secrets for a given path recursively and save them to a file named `'secrets.json'` for backups. `vault_kv_migrate` is perfect for operational tasks where you need to either replicate HashiCorp KV secrets to one or more Vault servers, KV engines within the same Vault server or a mix of both. It is also handful when you want to export the KV secrets to your machine as a backup.
