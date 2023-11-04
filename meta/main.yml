@@ -15,6 +15,7 @@ galaxy_info:
         - all
   galaxy_tags:
     - hashicorp
+    - vault-enterprise
     - vault
     - secrets
     - migration
