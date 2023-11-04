@@ -1,0 +1,9 @@
+---
+exclude_paths:
+  - .github/
+  - tests
+  - .ansible-lint
+
+skip_list:
+  - yaml[line-length]
+  - name[template]
