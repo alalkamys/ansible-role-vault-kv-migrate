@@ -1,9 +1,10 @@
 # Vault KV Migrate Role
 
 [![CI](https://github.com/alalkamys/ansible-role-vault-kv-migrate/actions/workflows/ci.yaml/badge.svg)](https://github.com/alalkamys/ansible-role-vault-kv-migrate/actions/workflows/ci.yaml)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/alalkamys/ansible-role-vault-kv-migrate.svg)](http://isitmaintained.com/project/alalkamys/ansible-role-vault-kv-migrate "Percentage of issues still open")
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![Ansible Role](https://img.shields.io/badge/ansible%20role-alalkamys.vault_kv_migrate-blue.svg)](https://galaxy.ansible.com/alalkamys/vault_kv_migrate/)
-[![GitHub tag](https://img.shields.io/github/tag/alakamys/ansible-role-vault-kv-migrate.svg)](https://github.com/alalkamys/ansible-role-vault-kv-migrate/tags)
+[![Ansible Role](https://img.shields.io/badge/galaxy-alalkamys.vault_kv_migrate-blue.svg)](https://galaxy.ansible.com/alalkamys/vault_kv_migrate/)
+[![GitHub tag](https://img.shields.io/github/tag/alalkamys/ansible-role-vault-kv-migrate.svg)](https://github.com/alalkamys/ansible-role-vault-kv-migrate/tags)
 
 ## Overview
 
@@ -133,6 +134,6 @@ This role is licensed under the MIT License. For more details, refer to the [LIC
 
 - **Author:** Shehab El-Deen Alalkamy
 - **Email:** [shehabeldeenalalkamy@gmail.com](mailto:shehabeldeenalalkamy@gmail.com)
-- **GitHub:** [alkamys](https://github.com/alkamys)
+- **GitHub:** [alalkamys](https://github.com/alalkamys)
 
-For more information and updates, please visit the [GitHub repository](https://github.com/alkamys/ansible-role-kv-migrate).
+For more information and updates, please visit the [GitHub repository](https://github.com/alalkamys/ansible-role-vault-kv-migrate).
