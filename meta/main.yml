@@ -1,0 +1,24 @@
+galaxy_info:
+  author: Shehab El-Deen Alalkamy
+  role_name: vault_kv_migrate
+  description: >
+    Migrates HashiCorp Vault KV secrets from one KV engine to multiple engines. It can also export HashiCorp KV secrets for a given path recursively, and
+     saves it to a file named 'secrets.json' for backups
+  license: MIT
+  min_ansible_version: 2.11
+  platforms:
+    - name: Linux
+      versions:
+        - all
+    - name: macOS
+      versions:
+        - all
+  galaxy_tags:
+    - hashicorp
+    - vault
+    - secrets
+    - migration
+    - automation
+    - backup
+
+dependencies: []
