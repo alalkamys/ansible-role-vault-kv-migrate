@@ -6,6 +6,8 @@ The `vault_kv_migrate` role automates the migration of secrets from one HashiCor
 
 `vault_kv_migrate` can also write migrate KV secrets of HashiCorp Vault sitting behind [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/).
 
+> **Note:** `vault_kv_migrate` is meant for operation tasks.
+
 ## Requirements
 
 - Ansible 2.11.5 or higher
