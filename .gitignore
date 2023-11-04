@@ -167,3 +167,6 @@ cython_debug/
 
 # ignore tests/vars
 tests/vars
+
+# ignore secrets.json
+secrets.json
