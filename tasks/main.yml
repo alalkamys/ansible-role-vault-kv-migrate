@@ -50,7 +50,7 @@
 
   rescue:
     - name: Show Error Responses
-      debug:
+      ansible.builtin.debug:
         var: filtered_response
       vars:
         filtered_response: "{{ response | json_query(jmesquery) }}"
