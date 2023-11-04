@@ -1,6 +1,7 @@
 # Vault KV Migrate Role
 
 [![CI](https://github.com/alalkamys/ansible-role-vault-kv-migrate/actions/workflows/ci.yaml/badge.svg)](https://github.com/alalkamys/ansible-role-vault-kv-migrate/actions/workflows/ci.yaml)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/alalkamys/ansible-role-vault-kv-migrate.svg)](http://isitmaintained.com/project/alalkamys/ansible-role-vault-kv-migrate "Percentage of issues still open")
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Ansible Role](https://img.shields.io/badge/ansible%20role-alalkamys.vault_kv_migrate-blue.svg)](https://galaxy.ansible.com/alalkamys/vault_kv_migrate/)
 [![GitHub tag](https://img.shields.io/github/tag/alalkamys/ansible-role-vault-kv-migrate.svg)](https://github.com/alalkamys/ansible-role-vault-kv-migrate/tags)
