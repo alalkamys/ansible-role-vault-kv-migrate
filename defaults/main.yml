@@ -1,0 +1,27 @@
+---
+# Vault API
+vault_kv_migrate_vault_api_version: v1
+vault_kv_migrate_vault_api_validate_certs: false
+
+# Removes 'secrets.json' after migration
+vault_kv_migrate_remove_backup: false
+
+# Cloudflare token
+vault_kv_migrate_cf_token: ""
+
+# Source Vault Server
+vault_kv_migrate_src_vault_addr: "http://localhost:8200"
+vault_kv_migrate_src_vault_token: ""
+vault_kv_migrate_src_vault_namespace: ""
+
+# don't add trailing '/'
+vault_kv_migrate_src_engine: secret
+vault_kv_migrate_src_secret_path: ""
+
+# Destination KV Engines
+vault_kv_migrate_dest_kv_engines:
+  - vault_addr: "http://localhost:8200"
+    vault_token: ""
+    vault_namespace: ""
+    # don't add trailing '/'
+    engine: secret2

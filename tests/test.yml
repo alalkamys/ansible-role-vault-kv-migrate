@@ -1,0 +1,9 @@
+---
+- name: Playbook to test the role funcitonality
+  hosts: localhost
+  become: false
+  gather_facts: false
+  vars_files:
+    vars/main.yml
+  roles:
+    - ../ansible-role-vault-kv-migrate
