@@ -122,7 +122,6 @@ The exported secrets data will be stored in `{{ playboook_dir }}/secrets.json`, 
       }
     }
   }
-...
 ]
 ```
 
