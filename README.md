@@ -133,6 +133,6 @@ This role is licensed under the MIT License. For more details, refer to the [LIC
 
 - **Author:** Shehab El-Deen Alalkamy
 - **Email:** [shehabeldeenalalkamy@gmail.com](mailto:shehabeldeenalalkamy@gmail.com)
-- **GitHub:** [alkamys](https://github.com/alalkamys)
+- **GitHub:** [alalkamys](https://github.com/alalkamys)
 
 For more information and updates, please visit the [GitHub repository](https://github.com/alalkamys/ansible-role-vault-kv-migrate).
