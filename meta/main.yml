@@ -5,9 +5,15 @@ galaxy_info:
     Migrates HashiCorp Vault KV secrets from one KV engine to multiple engines. It can also export HashiCorp KV secrets for a given path recursively, and
      saves it to a file named 'secrets.json' for backups
   license: MIT
-  min_ansible_version: 2.11
+  min_ansible_version: "2.11"
   platforms:
-    - name: Linux
+    - name: Fedora
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
       versions:
         - all
     - name: macOS
@@ -15,7 +21,6 @@ galaxy_info:
         - all
   galaxy_tags:
     - hashicorp
-    - vault-enterprise
     - vault
     - secrets
     - migration
