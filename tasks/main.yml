@@ -54,7 +54,7 @@
         var: filtered_response
       vars:
         filtered_response: "{{ response | json_query(jmesquery) }}"
-        jmesquery: "results[?status!=`200`].{ reason: msg, url: url, status: status, secret: secret, content: content, errors: json.errors }}"
+        jmesquery: "results[?status!=`200`].{ reason: msg, url: url, status: status, secret: secret, content: content, errors: json.errors }"
 
 - name: Remove Local Backup
   ansible.builtin.file:
