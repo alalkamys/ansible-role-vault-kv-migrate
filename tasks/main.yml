@@ -1,0 +1,65 @@
+---
+- name: Export {{ vault_kv_migrate_src_engine }}/{{ vault_kv_migrate_src_secret_path }} KV {{ 'Engine ' if vault_kv_migrate_src_secret_path|length == 0 }}Secrets Data
+  ansible.builtin.script: vault-kv-export.sh {{ vault_kv_migrate_src_engine }}/{{ vault_kv_migrate_src_secret_path }}
+  environment:
+    VAULT_ADDR: "{{ vault_kv_migrate_src_vault_addr }}"
+    VAULT_TOKEN: "{{ vault_kv_migrate_src_vault_token }}"
+    VAULT_NAMESPACE: "{{ vault_kv_migrate_src_vault_namespace }}"
+    CF_TOKEN: "{{ vault_kv_migrate_cf_token | default('', true) }}"
+  register: export_result
+  changed_when: export_result.rc != 0
+  tags:
+    - export
+
+- name: Write Secrets
+  tags:
+    - write_secrets
+  block:
+    - name: Write Secrets to KV Engines
+      ansible.builtin.uri:
+        url: "{{ dest_vault_addr }}/{{ vault_kv_migrate_vault_api_version }}/{{ dest_engine }}/data/{{ secret_path }}"
+        method: POST
+        body_format: json
+        status_code:
+          - 200
+          - 202
+          - 204
+        validate_certs: "{{ vault_kv_migrate_vault_api_validate_certs }}"
+        headers:
+          Content-Type: application/json
+          X-Vault-Token: "{{ dest_vault_token }}"
+          X-Vault-Namespace: "{{ dest_vault_namespace }}"
+          cf-access-token: "{{ vault_kv_migrate_cf_token }}"
+        body: "{{ secret_value }}"
+      with_nested:
+        - "{{ vault_kv_migrate_dest_kv_engines }}"
+        - "{{ secrets }}"
+      loop_control:
+        label: "(host: {{ dest_vault_addr|regex_replace(regex, '') }}, namespace: {{ dest_vault_namespace }}, engine_path: {{ dest_engine ~ '/' }}, secret_path: {{ secret_path }})"
+        loop_var: loop_vars
+      register: response
+      vars:
+        secrets: "{{ lookup('file', '{{ playbook_dir }}/secrets.json') | from_json | default([], true) }}"
+        secret_path: "{{ loop_vars[1].path | replace(vault_kv_migrate_src_engine ~ '/', '') }}"
+        secret_value: "{{ loop_vars[1].value }}"
+        dest_vault_addr: "{{ loop_vars[0].vault_addr }}"
+        dest_vault_token: "{{ loop_vars[0].vault_token }}"
+        dest_vault_namespace: "{{ loop_vars[0].vault_namespace | default('root', true) }}"
+        dest_engine: "{{ loop_vars[0].engine }}"
+        regex: ^http[s]?:\/\/
+
+  rescue:
+    - name: Show Error Responses
+      debug:
+        var: filtered_response
+      vars:
+        filtered_response: "{{ response | json_query(jmesquery) }}"
+        jmesquery: "results[?status!=`200`].{ reason: msg, url: url, status: status, secret: secret, content: content, errors: json.errors }}"
+
+- name: Remove Local Backup
+  ansible.builtin.file:
+    path: "{{ playbook_dir }}/secrets.json"
+    state: absent
+  when: vault_kv_migrate_remove_backup
+  tags:
+    - remove_backup
