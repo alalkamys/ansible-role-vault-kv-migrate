@@ -1,6 +1,7 @@
 galaxy_info:
   author: Shehab El-Deen Alalkamy
   role_name: vault_kv_migrate
+  namespace: alalkamys
   description: >
     Migrates HashiCorp Vault KV secrets from one KV engine to multiple engines. It can also export HashiCorp KV secrets for a given path recursively, and
      saves it to a file named 'secrets.json' for backups
