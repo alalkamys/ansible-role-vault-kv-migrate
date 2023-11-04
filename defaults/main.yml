@@ -1,10 +1,10 @@
 ---
 # Vault API
 vault_kv_migrate_vault_api_version: v1
-vault_kv_migrate_vault_api_validate_certs: no
+vault_kv_migrate_vault_api_validate_certs: false
 
 # Removes 'secrets.json' after migration
-vault_kv_migrate_remove_backup: no
+vault_kv_migrate_remove_backup: false
 
 # Cloudflare token
 vault_kv_migrate_cf_token: ""
